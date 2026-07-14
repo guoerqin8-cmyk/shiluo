@@ -245,24 +245,25 @@ function initMusic() {
     
     if (!musicBtn) return;
     
-    audioPlayer = new Audio('https://music.163.com/song/media/outer/url?id=488791876.mp3');
-    audioPlayer.loop = true;
-    audioPlayer.volume = musicStates.volume;
-    
     musicBtn.addEventListener('click', function() {
         if (musicStates.playing) {
-            audioPlayer.pause();
+            if (audioPlayer) {
+                audioPlayer.pause();
+            }
             musicStates.playing = false;
             musicIcon.innerHTML = '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
         } else {
-            audioPlayer.play();
+            if (!audioPlayer) {
+                audioPlayer = new Audio('https://cdn.pixabay.com/audio/2022/05/27/audio_9c4a161198.mp3');
+                audioPlayer.loop = true;
+                audioPlayer.volume = musicStates.volume;
+            }
+            audioPlayer.play().catch(function(e) {
+                console.log('音乐播放失败:', e);
+            });
             musicStates.playing = true;
             musicIcon.innerHTML = '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zM19 17h2v-3h-2v3zm0-5h2V8h-2v4z"/>';
         }
-    });
-    
-    audioPlayer.addEventListener('timeupdate', function() {
-        musicStates.currentTime = audioPlayer.currentTime;
     });
 }
 
