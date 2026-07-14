@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+:root {
+    --paper-white: #f5f0e8;
+    --ink-black: #2c2c2c;
+    --light-cyan: #a8c5d9;
+    --ochre: #c4956a;
+    --bamboo-green: #6b8e6b;
+    --ink-gray: #5a5a5a;
+    --border-brown: #8b7355;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    background-color: var(--paper-white);
+    color: var(--ink-black);
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(ellipse at 20% 80%, rgba(168, 197, 217, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(196, 149, 106, 0.1) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c2c2c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.font-calligraphy {
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.header {
+    background: linear-gradient(180deg, rgba(44, 44, 44, 0.95) 0%, rgba(44, 44, 44, 0.9) 100%);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 28px;
+    color: var(--paper-white);
+    text-decoration: none;
+    letter-spacing: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--paper-white);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.nav-links li a:hover {
+    color: var(--ochre);
+    background-color: rgba(245, 240, 232, 0.1);
+}
+
+.music-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--ochre);
+    border-radius: 50%;
+    background: rgba(196, 149, 106, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: rgba(196, 149, 106, 0.4);
+    transform: scale(1.1);
+}
+
+.music-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--ochre);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+.page-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--ink-black);
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--ochre), transparent);
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--ink-gray);
+    font-size: 16px;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-brown);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+.card-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 28px;
+    color: var(--ink-black);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-brown);
+}
+
+.poem-content {
+    font-size: 18px;
+    line-height: 2.2;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--ink-black);
+}
+
+.poem-author {
+    text-align: right;
+    color: var(--ink-gray);
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.author-link {
+    color: var(--ochre);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.author-link:hover {
+    color: var(--bamboo-green);
+    text-decoration: underline;
+}
+
+.poet-bio {
+    background: rgba(168, 197, 217, 0.1);
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ink-gray);
+}
+
+.poet-bio h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 20px;
+    color: var(--ink-black);
+    margin-bottom: 10px;
+}
+
+.img-container {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid var(--border-brown);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.img-caption {
+    font-size: 14px;
+    color: var(--ink-gray);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.tag-cloud a {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(196, 149, 106, 0.15);
+    border: 1px solid var(--ochre);
+    border-radius: 30px;
+    color: var(--ochre);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.tag-cloud a:hover {
+    background: rgba(196, 149, 106, 0.3);
+    transform: scale(1.05);
+}
+
+.scroll-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-modal.show {
+    display: flex;
+}
+
+.scroll-content {
+    background: var(--paper-white);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-header {
+    background: linear-gradient(90deg, var(--ink-black) 0%, #4a4a4a 100%);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.scroll-header h3 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 28px;
+    color: var(--paper-white);
+    letter-spacing: 4px;
+}
+
+.scroll-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.scroll-body .poem-content {
+    font-size: 20px;
+    line-height: 2.5;
+    margin: 25px 0;
+}
+
+.scroll-body .poem-author {
+    margin-bottom: 20px;
+}
+
+.scroll-body .explanation {
+    background: rgba(168, 197, 217, 0.15);
+    padding: 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--ink-gray);
+    text-align: left;
+}
+
+.scroll-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--paper-white);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--paper-white);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.scroll-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--ink-black);
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    border: 2px solid var(--border-brown);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--ochre);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--ochre) 0%, #a67c52 100%);
+    color: var(--paper-white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 149, 106, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(168, 197, 217, 0.3);
+    color: var(--ink-black);
+    border: 1px solid var(--light-cyan);
+}
+
+.btn-secondary:hover {
+    background: rgba(168, 197, 217, 0.5);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.footer {
+    background: var(--ink-black);
+    color: var(--paper-white);
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+.footer p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.node-network {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--border-brown);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.network-node {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(196, 149, 106, 0.9) 0%, rgba(196, 149, 106, 0.6) 100%);
+    border: 3px solid var(--ink-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(196, 149, 106, 0.4);
+}
+
+.network-node:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 25px rgba(196, 149, 106, 0.6);
+}
+
+.network-node span {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 20px;
+    color: var(--paper-white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.network-link {
+    position: absolute;
+    background: var(--border-brown);
+    height: 2px;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.stat-card {
+    background: rgba(107, 142, 107, 0.1);
+    border: 1px solid var(--bamboo-green);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 24px;
+    color: var(--bamboo-green);
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 14px;
+    color: var(--ink-gray);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links li a {
+        font-size: 14px;
+    }
+    
+    .page-title {
+        font-size: 36px;
+    }
+    
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .node-network {
+        height: 400px;
+    }
+    
+    .network-node {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .network-node span {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗人详情 - 诗络</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">诗络</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="poem_moon.html">明月</a></li>
+                    <li><a href="poem_homesick.html">乡愁</a></li>
+                    <li><a href="poem_frustrated.html">宽慰</a></li>
+                    <li><a href="poem_frontier.html">边塞</a></li>
+                    <li><a href="consolation.html">解忧</a></li>
+                    <li><a href="music_intro.html">音乐</a></li>
+                    <li><a href="about.html">关于</a></li>
+                </ul>
+            </nav>
+            <div id="music-btn" class="music-btn">
+                <svg id="music-icon" viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1 class="page-title font-calligraphy">诗人详情</h1>
+        <p class="page-subtitle">品读诗人人生 · 感悟诗词意境</p>
+
+        <div id="poet-content">
+            <div class="card">
+                <div class="grid-2">
+                    <div>
+                        <h2 id="poet-name" class="card-title font-calligraphy" style="font-size: 36px;"></h2>
+                        <p style="margin-bottom: 10px; color: #5a5a5a;">
+                            <span id="poet-era"></span> · <span id="poet-style"></span>
+                        </p>
+                        <div id="poet-bio" style="text-align: left; line-height: 1.8;"></div>
+                    </div>
+                    <div class="img-container">
+                        <img id="poet-image" src="" alt="诗人画像" style="max-width: 300px; border-radius: 50%;">
+                        <p class="img-caption">诗人画像</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title font-calligraphy">代表作品</h2>
+                <ul id="poet-works" style="list-style: none; padding-left: 0;">
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>2026 诗络</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
