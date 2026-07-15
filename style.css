@@ -1,521 +1,200 @@
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;600&display=swap");
 
 :root {
-    --paper-white: #f5f0e8;
-    --ink-black: #2c2c2c;
-    --light-cyan: #a8c5d9;
-    --ochre: #c4956a;
-    --bamboo-green: #6b8e6b;
-    --ink-gray: #5a5a5a;
-    --border-brown: #8b7355;
+    --moon-white: #f7f5f0;
+    --paper-cream: #f0ebe0;
+    --ink-dark: #2c2c2c;
+    --ink-medium: #4a4a4a;
+    --ink-light-gray: #7a7a7a;
+    --ink-faint: #b5b5b5;
+    --indigo-blue: #177cb0;
+    --dai-blue: #425066;
+    --zang-qing: #2e4e7e;
+    --blue-gray: #a1afc9;
+    --warm-gray: #546e7a;
+    --stone-gray: #8a959e;
+    --moon-glow: #e8e5dc;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Noto Serif SC', serif;
-    background-color: var(--paper-white);
-    color: var(--ink-black);
-    min-height: 100vh;
-    background-image: 
-        radial-gradient(ellipse at 20% 80%, rgba(168, 197, 217, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(196, 149, 106, 0.1) 0%, transparent 50%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c2c2c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.font-calligraphy {
-    font-family: 'Ma Shan Zheng', cursive;
-}
-
-.header {
-    background: linear-gradient(180deg, rgba(44, 44, 44, 0.95) 0%, rgba(44, 44, 44, 0.9) 100%);
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-}
-
-.logo {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 28px;
-    color: var(--paper-white);
-    text-decoration: none;
-    letter-spacing: 8px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.nav-links li a {
-    color: var(--paper-white);
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.nav-links li a:hover {
-    color: var(--ochre);
-    background-color: rgba(245, 240, 232, 0.1);
-}
-
-.music-btn {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--ochre);
-    border-radius: 50%;
-    background: rgba(196, 149, 106, 0.2);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.music-btn:hover {
-    background: rgba(196, 149, 106, 0.4);
-    transform: scale(1.1);
-}
-
-.music-btn svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--ochre);
-}
-
-.content {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 30px;
-}
-
-.page-title {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: 10px;
-    color: var(--ink-black);
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    font-family: "Noto Serif SC", serif; 
+    background: linear-gradient(180deg, var(--moon-white) 0%, var(--paper-cream) 100%); 
+    color: var(--ink-dark); 
+    min-height: 100vh; 
+    letter-spacing: 0.02em; 
     position: relative;
 }
-
-.page-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--ochre), transparent);
-}
-
-.page-subtitle {
-    text-align: center;
-    color: var(--ink-gray);
-    font-size: 16px;
-    margin-bottom: 40px;
-    letter-spacing: 4px;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid var(--border-brown);
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transform: translateY(-3px);
-}
-
-.card-title {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 28px;
-    color: var(--ink-black);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--border-brown);
-}
-
-.poem-content {
-    font-size: 18px;
-    line-height: 2.2;
-    text-align: center;
-    margin: 20px 0;
-    color: var(--ink-black);
-}
-
-.poem-author {
-    text-align: right;
-    color: var(--ink-gray);
-    font-size: 16px;
-    margin-right: 20px;
-}
-
-.author-link {
-    color: var(--ochre);
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.author-link:hover {
-    color: var(--bamboo-green);
-    text-decoration: underline;
-}
-
-.poet-bio {
-    background: rgba(168, 197, 217, 0.1);
-    border-radius: 6px;
-    padding: 20px;
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--ink-gray);
-}
-
-.poet-bio h4 {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 20px;
-    color: var(--ink-black);
-    margin-bottom: 10px;
-}
-
-.img-container {
-    text-align: center;
-    margin: 25px 0;
-}
-
-.img-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 3px solid var(--border-brown);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.img-caption {
-    font-size: 14px;
-    color: var(--ink-gray);
-    margin-top: 10px;
-    font-style: italic;
-}
-
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.tag-cloud a {
-    display: inline-block;
-    padding: 10px 25px;
-    background: rgba(196, 149, 106, 0.15);
-    border: 1px solid var(--ochre);
-    border-radius: 30px;
-    color: var(--ochre);
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.tag-cloud a:hover {
-    background: rgba(196, 149, 106, 0.3);
-    transform: scale(1.05);
-}
-
-.scroll-modal {
-    display: none;
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a1afc9' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
 }
+.font-calligraphy { font-family: "Ma Shan Zheng", cursive; }
 
-.scroll-modal.show {
-    display: flex;
-}
+.header { background: transparent; padding: 20px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: background-color 0.5s ease; }
+.header.scrolled { background: rgba(247, 245, 240, 0.92); backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); }
+.header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+.logo { font-family: "Ma Shan Zheng", cursive; font-size: 28px; color: var(--ink-dark); text-decoration: none; letter-spacing: 14px; padding-left: 14px; position: relative; }
+.logo::after { content: ""; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 40px; height: 1px; background: var(--indigo-blue); }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links li a { color: var(--ink-medium); text-decoration: none; font-size: 15px; padding: 8px 0; position: relative; transition: color 0.3s ease; font-weight: 300; letter-spacing: 2px; }
+.nav-links li a::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--indigo-blue); transition: width 0.4s ease; }
+.nav-links li a:hover { color: var(--indigo-blue); }
+.nav-links li a:hover::after { width: 100%; }
 
-.scroll-content {
-    background: var(--paper-white);
-    width: 90%;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
+.music-btn { width: 38px; height: 38px; border: 1px solid var(--ink-faint); border-radius: 50%; background: rgba(255, 255, 255, 0.6); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.music-btn:hover { border-color: var(--indigo-blue); background: rgba(23, 124, 176, 0.08); }
+.music-btn svg { width: 16px; height: 16px; fill: var(--ink-medium); transition: fill 0.3s ease; }
+.music-btn:hover svg { fill: var(--indigo-blue); }
+
+.content { max-width: 1100px; margin: 0 auto; padding: 110px 30px 60px; }
+.page-title { font-family: "Ma Shan Zheng", cursive; font-size: 52px; text-align: center; color: var(--ink-dark); margin-bottom: 16px; letter-spacing: 10px; font-weight: 400; }
+.page-subtitle { text-align: center; color: var(--ink-light-gray); font-size: 15px; margin-bottom: 70px; letter-spacing: 8px; font-weight: 300; }
+
+.card { 
+    background: rgba(255, 255, 255, 0.75); 
+    padding: 45px 40px; 
+    margin-bottom: 45px; 
+    border-left: 3px solid rgba(23, 124, 176, 0.2); 
+    transition: all 0.4s ease; 
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 2px;
     position: relative;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
-
-.scroll-header {
-    background: linear-gradient(90deg, var(--ink-black) 0%, #4a4a4a 100%);
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px 8px 0 0;
-}
-
-.scroll-header h3 {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 28px;
-    color: var(--paper-white);
-    letter-spacing: 4px;
-}
-
-.scroll-body {
-    padding: 30px;
-    text-align: center;
-}
-
-.scroll-body .poem-content {
-    font-size: 20px;
-    line-height: 2.5;
-    margin: 25px 0;
-}
-
-.scroll-body .poem-author {
-    margin-bottom: 20px;
-}
-
-.scroll-body .explanation {
-    background: rgba(168, 197, 217, 0.15);
-    padding: 20px;
-    border-radius: 6px;
-    font-size: 15px;
-    line-height: 1.9;
-    color: var(--ink-gray);
-    text-align: left;
-}
-
-.scroll-close {
+.card::before {
+    content: "";
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    border: 2px solid var(--paper-white);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--paper-white);
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(23, 124, 176, 0.15), transparent);
 }
-
-.scroll-close:hover {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: var(--ink-black);
-}
-
-.input-group textarea {
-    width: 100%;
-    padding: 15px;
-    font-family: 'Noto Serif SC', serif;
-    font-size: 16px;
-    border: 2px solid var(--border-brown);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    resize: vertical;
-    min-height: 120px;
-    transition: border-color 0.3s ease;
-}
-
-.input-group textarea:focus {
-    outline: none;
-    border-color: var(--ochre);
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 40px;
-    font-family: 'Noto Serif SC', serif;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    text-align: center;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--ochre) 0%, #a67c52 100%);
-    color: var(--paper-white);
-}
-
-.btn-primary:hover {
+.card:hover { 
+    border-left-color: rgba(23, 124, 176, 0.5); 
+    background: rgba(255, 255, 255, 0.9); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(196, 149, 106, 0.4);
 }
+.card-title { font-family: "Ma Shan Zheng", cursive; font-size: 28px; color: var(--ink-dark); margin-bottom: 28px; letter-spacing: 5px; text-align: center; }
+.poem-content { font-size: 18px; line-height: 2.6; text-align: center; margin: 25px 0 35px; color: var(--ink-medium); font-weight: 300; letter-spacing: 0.06em; }
+.poem-author { text-align: right; color: var(--ink-light-gray); font-size: 15px; margin-right: 30px; font-weight: 300; letter-spacing: 2px; }
+.author-link { color: var(--indigo-blue); text-decoration: none; cursor: pointer; transition: color 0.3s ease; }
+.author-link:hover { color: var(--zang-qing); }
 
-.btn-secondary {
-    background: rgba(168, 197, 217, 0.3);
-    color: var(--ink-black);
-    border: 1px solid var(--light-cyan);
-}
-
-.btn-secondary:hover {
-    background: rgba(168, 197, 217, 0.5);
-}
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.footer {
-    background: var(--ink-black);
-    color: var(--paper-white);
-    text-align: center;
-    padding: 30px;
-    margin-top: 60px;
-}
-
-.footer p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.node-network {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid var(--border-brown);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.network-node {
+.img-container { text-align: center; margin: 50px 0 60px; position: relative; }
+.img-container::before {
+    content: "";
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(196, 149, 106, 0.9) 0%, rgba(196, 149, 106, 0.6) 100%);
-    border: 3px solid var(--ink-black);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(196, 149, 106, 0.4);
+    top: 50%;
+    left: -20px;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue-gray));
 }
-
-.network-node:hover {
-    transform: scale(1.2);
-    box-shadow: 0 8px 25px rgba(196, 149, 106, 0.6);
-}
-
-.network-node span {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 20px;
-    color: var(--paper-white);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.network-link {
+.img-container::after {
+    content: "";
     position: absolute;
-    background: var(--border-brown);
-    height: 2px;
-    opacity: 0.4;
-    z-index: 0;
+    top: 50%;
+    right: -20px;
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--blue-gray), transparent);
+}
+.img-container img { max-width: 95%; height: auto; opacity: 0.92; transition: opacity 0.5s ease; border-radius: 4px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); }
+.img-container img:hover { opacity: 1; }
+
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin: 50px 0; }
+.tag-cloud a { 
+    display: inline-block; 
+    padding: 10px 28px; 
+    background: rgba(23, 124, 176, 0.04); 
+    border: 1px solid rgba(23, 124, 176, 0.15); 
+    color: var(--ink-medium); 
+    text-decoration: none; 
+    font-size: 14px; 
+    transition: all 0.3s ease; 
+    letter-spacing: 3px; 
+    border-radius: 2px;
+}
+.tag-cloud a:hover { 
+    border-color: var(--indigo-blue); 
+    color: var(--indigo-blue); 
+    background: rgba(23, 124, 176, 0.08); 
 }
 
-.stat-card {
-    background: rgba(107, 142, 107, 0.1);
-    border: 1px solid var(--bamboo-green);
-    border-radius: 8px;
-    padding: 25px;
-    text-align: center;
-}
+.scroll-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.25); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
+.scroll-modal.show { display: flex; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.scroll-content { background: var(--moon-white); width: 85%; max-width: 600px; max-height: 80vh; overflow-y: auto; position: relative; animation: slideUp 0.5s ease; border-radius: 4px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); }
+@keyframes slideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+.scroll-header { background: linear-gradient(135deg, var(--zang-qing) 0%, var(--dai-blue) 100%); padding: 30px; text-align: center; border-radius: 4px 4px 0 0; }
+.scroll-header h3 { font-family: "Ma Shan Zheng", cursive; font-size: 26px; color: var(--moon-white); letter-spacing: 8px; font-weight: 400; }
+.scroll-body { padding: 40px; text-align: center; }
+.scroll-body .poem-content { font-size: 19px; line-height: 2.7; margin: 30px 0; }
+.scroll-body .poem-author { margin-bottom: 30px; }
+.scroll-body .explanation { background: rgba(23, 124, 176, 0.06); padding: 28px; font-size: 15px; line-height: 2.1; color: var(--ink-medium); text-align: left; font-weight: 300; border-radius: 4px; }
+.scroll-close { position: absolute; top: 18px; right: 18px; width: 34px; height: 34px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; background: transparent; color: var(--moon-white); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.scroll-close:hover { background: rgba(255, 255, 255, 0.15); }
 
-.stat-card h4 {
-    font-family: 'Ma Shan Zheng', cursive;
-    font-size: 24px;
-    color: var(--bamboo-green);
-    margin-bottom: 10px;
-}
+.input-group { margin-bottom: 30px; }
+.input-group label { display: block; margin-bottom: 14px; font-size: 15px; color: var(--ink-medium); font-weight: 300; letter-spacing: 2px; }
+.input-group textarea { width: 100%; padding: 20px; font-family: "Noto Serif SC", serif; font-size: 15px; border: 1px solid rgba(138, 149, 158, 0.2); background: rgba(255, 255, 255, 0.6); resize: vertical; min-height: 150px; transition: all 0.3s ease; color: var(--ink-dark); letter-spacing: 0.03em; border-radius: 4px; }
+.input-group textarea:focus { outline: none; border-color: var(--indigo-blue); background: rgba(255, 255, 255, 0.9); box-shadow: 0 0 0 3px rgba(23, 124, 176, 0.06); }
+.input-group textarea::placeholder { color: var(--ink-faint); }
 
-.stat-card p {
-    font-size: 14px;
-    color: var(--ink-gray);
+.btn { display: inline-block; padding: 14px 50px; font-family: "Noto Serif SC", serif; font-size: 15px; border: none; cursor: pointer; text-decoration: none; text-align: center; transition: all 0.3s ease; letter-spacing: 4px; border-radius: 2px; }
+.btn-primary { background: linear-gradient(135deg, var(--indigo-blue) 0%, var(--zang-qing) 100%); color: var(--moon-white); }
+.btn-primary:hover { background: linear-gradient(135deg, #136696 0%, #274263 100%); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(23, 124, 176, 0.25); }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+
+.footer { background: linear-gradient(135deg, var(--zang-qing) 0%, var(--dai-blue) 100%); color: rgba(247, 245, 240, 0.5); text-align: center; padding: 50px; margin-top: 100px; position: relative; }
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
+.footer p { font-size: 14px; font-weight: 300; letter-spacing: 6px; }
+
+.node-network { position: relative; width: 100%; height: 580px; background: transparent; overflow: hidden; }
+.network-node { position: absolute; width: 85px; height: 85px; background: rgba(23, 124, 176, 0.06); border: 1px solid rgba(23, 124, 176, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.4s ease; }
+.network-node:hover { background: rgba(23, 124, 176, 0.12); border-color: var(--indigo-blue); transform: scale(1.12); box-shadow: 0 6px 20px rgba(23, 124, 176, 0.15); }
+.network-node span { font-family: "Ma Shan Zheng", cursive; font-size: 18px; color: var(--ink-medium); letter-spacing: 3px; }
+.network-node:hover span { color: var(--indigo-blue); }
+.network-link { position: absolute; background: rgba(138, 149, 158, 0.08); height: 1px; z-index: 0; }
+
+.stat-card { background: rgba(23, 124, 176, 0.04); border: 1px solid rgba(23, 124, 176, 0.1); padding: 35px; text-align: center; transition: all 0.3s ease; border-radius: 4px; }
+.stat-card:hover { background: rgba(23, 124, 176, 0.08); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+.stat-card h4 { font-family: "Ma Shan Zheng", cursive; font-size: 24px; color: var(--indigo-blue); margin-bottom: 14px; letter-spacing: 5px; }
+.stat-card p { font-size: 14px; color: var(--ink-light-gray); font-weight: 300; }
+
+.divider { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, rgba(23, 124, 176, 0.25), transparent); margin: 70px auto; position: relative; }
+.divider::before { content: ""; position: absolute; top: -3px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; border: 1px solid rgba(23, 124, 176, 0.3); border-radius: 50%; }
 
 @media (max-width: 768px) {
-    .nav-links {
-        gap: 15px;
-    }
-    
-    .nav-links li a {
-        font-size: 14px;
-    }
-    
-    .page-title {
-        font-size: 36px;
-    }
-    
-    .grid-2, .grid-3 {
-        grid-template-columns: 1fr;
-    }
-    
-    .node-network {
-        height: 400px;
-    }
-    
-    .network-node {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .network-node span {
-        font-size: 16px;
-    }
+    .header-content { padding: 0 15px; }
+    .nav-links { gap: 25px; }
+    .nav-links li a { font-size: 13px; }
+    .content { padding: 90px 15px 40px; max-width: 100%; }
+    .page-title { font-size: 38px; }
+    .page-subtitle { margin-bottom: 50px; }
+    .card { padding: 30px 20px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .node-network { height: 420px; }
+    .network-node { width: 65px; height: 65px; }
+    .network-node span { font-size: 15px; }
 }
